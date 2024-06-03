@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\bayiModel;
 use App\Models\imunisasiModel;
+use App\Models\jadwalModel;
 use App\Models\pemeriksaanModel;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,22 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
 
-    public function __construct()
-    {
-        $ownerEmail = 'owner@gmail.com';
-    
-        $ownerUser = User::where('email', $ownerEmail)->first();
         
-        
-        if (!$ownerUser) {
-            User::create([
-                'name' => 'owner',
-                'email' => $ownerEmail,
-                'password' => Hash::make('owner123'),
-                'role' => 'owner',
-            ]);
-        }
-    }
 
 
     public function show_dashboard(){
@@ -78,6 +64,7 @@ class AdminController extends Controller
             'bayi' => $bayi
         ]);
     }
+
     public function show_laporanimunisasi(){
         $imunisasi = imunisasiModel::with('bayi')->get();
         $bayi = bayiModel::all();
@@ -93,6 +80,14 @@ class AdminController extends Controller
         return view('admin.layout.akun_petugas',[
             'title' => 'Akun Petugas',
             'user' => $user
+        ]);
+    }
+
+    public function show_jadwal(){
+        $jadwal = jadwalModel::all();
+        return view('admin.layout.jadwalposyandu',[
+            'title' => 'Jadwal Posyandu',
+            'jadwal' => $jadwal
         ]);
     }
 }

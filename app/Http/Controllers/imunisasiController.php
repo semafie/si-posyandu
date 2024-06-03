@@ -65,4 +65,22 @@ class imunisasiController extends Controller
                 $imunisasi->delete();
                 return redirect()->route('admin_laporanimunisasi')->with(Session::flash('berhasil_hapus', true));
             }
+
+            public function edits(Request $request, $id){
+                $imunisasi = imunisasiModel::findorFAil($id);
+        
+                $imunisasi->jenis_imunisasi = $request->input('jenis_imunisasi');
+                $imunisasi->jenis_vitamin = $request->input('jenis_vitamin');
+                $imunisasi->keterangan = $request->input('keterangan');
+        
+                $imunisasi->save();
+                return redirect()->route('admin_laporanimunisasi')->with(Session::flash('berhasil_edit', true));
+            }
+
+            public function hapuss(Request $request, $id){
+                $imunisasi = imunisasiModel::findorFAil($id);
+        
+                $imunisasi->delete();
+                return redirect()->route('admin_laporanimunisasi')->with(Session::flash('berhasil_hapus', true));
+            }
 }

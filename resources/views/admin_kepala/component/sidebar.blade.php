@@ -62,77 +62,38 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboards -->
-      <li class="menu-item @active('admin_dashboard') open">
-        <a href="{{ route('admin_dashboard') }}" class="menu-link">
+      <li class="menu-item @active('admin_kepala_dashboard') open">
+        <a href="{{ route('admin_kepala_dashboard') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Dashboards">Dashboards</div>
           {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
         </a>
       </li>
 
-      <!-- Layouts -->
-      <li class="menu-item @active('admin_pendaftaran') @active('admin_pemeriksaan') @active('admin_imunisasi')">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bxs-data"></i>
-          <div data-i18n="Layouts">Pendataan</div>
-        </a>
-
-        <ul class="menu-sub">
-          <li class="menu-item @active('admin_pendaftaran')">
-            <a href="{{ route('admin_pendaftaran') }}" class="menu-link">
-              <div data-i18n="Without menu">Pendaftaran</div>
-            </a>
-          </li>
-          <li class="menu-item @active('admin_pemeriksaan')">
-            <a href="{{ route('admin_pemeriksaan') }}" class="menu-link">
-              <div data-i18n="Without navbar">Pemeriksaan bayi</div>
-            </a>
-          </li>
-          <li class="menu-item @active('admin_imunisasi')">
-            <a href="{{ route('admin_imunisasi') }}" class="menu-link">
-              <div data-i18n="Container">Imunisasi Bayi</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <!-- Front Pages -->
       
 
-      <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Data Master</span>
-      </li>
-      <!-- Apps -->
-      <li class="menu-item @active('admin_databayi')">
-        <a href="{{ route('admin_databayi') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-child"></i>
-          <div data-i18n="Email">Bayi dan Balita</div>
-          {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
-        </a>
-      </li>
-
-      <li class="menu-item @active('admin_laporanpemeriksaan') @active('admin_laporanimunisasi')">
+      <li class="menu-item @active('admin_kepala_laporanpemeriksaan') @active('admin_kepala_laporanimunisasi')">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bxs-report"></i>
           <div data-i18n="Layouts">Laporan</div>
         </a>
         <ul class="menu-sub">
-          <li class="menu-item @active('admin_laporanpemeriksaan')">
-            <a href="{{ route('admin_laporanpemeriksaan') }}" class="menu-link">
+          <li class="menu-item @active('admin_kepala_laporanpemeriksaan')">
+            <a href="{{ route('admin_kepala_laporanpemeriksaan') }}" class="menu-link">
               <div data-i18n="Without navbar">Pemeriksaan bayi</div>
             </a>
           </li>
-          <li class="menu-item @active('admin_laporanimunisasi')">
-            <a href="{{ route('admin_laporanimunisasi') }}" class="menu-link">
+          <li class="menu-item @active('admin_kepala_laporanimunisasi')">
+            <a href="{{ route('admin_kepala_laporanimunisasi') }}" class="menu-link">
               <div data-i18n="Container">Imunisasi Bayi</div>
             </a>
           </li>
         </ul>
       </li>
 
-      <li class="menu-item @active('admin_jadwal')">
+      <li class="menu-item @active('admin_kepala_jadwal')">
         <a
-          href="{{  route('admin_jadwal') }}"
+          href="{{  route('admin_kepala_jadwal') }}"
           {{-- target="_blank" --}}
           class="menu-link">
           <i class="menu-icon tf-icons bx bx-time-five"></i>
@@ -140,9 +101,9 @@
           {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
         </a>
       </li>
-      <li class="menu-item @active('admin_akun')">
+      <li class="menu-item @active('admin_kepala_akun')">
         <a
-          href="{{ route('admin_akun') }}"
+          href="{{ route('admin_kepala_akun') }}"
           class="menu-link">
           <i class="menu-icon tf-icons bx bxs-user-account"></i>
           <div data-i18n="Email">Akun Petugas</div>

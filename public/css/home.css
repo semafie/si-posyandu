@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar{
+    position: absolute;
+    width: 100%;
+    padding: 0 80px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar.active{
+    background-color: white;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 200;
+}
+
+.navbar > a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FF5A7C;
+}
+
+.navbar > a span{
+    color: #908A94;
+}
+
+.navbar a button{
+    color: white;
+    border: none;
+    background-color: #FF5A7C;
+    padding: 5px 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar a button:hover{
+    background-color: #ff97ac;
+}
+
+.isi{
+    padding-top: 90px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.isi > h1{
+    background-color: #D9D9D9;
+    padding: 7px 35px;
+    font-size: 40px;
+    color: #404040;
+    border-radius: 5px;
+}
+
+.isi > p{
+    position: absolute;
+    margin-top: 70px;
+    background-color: #FF5A7C;
+    color: white;
+    padding: 3px 25px;
+    border-radius: 5px;
+    font-size: 25px;
+    margin-left: 300px;
+}
+
+.jadwal_tengah{}
+
+.tampilan_jadwal{
+    padding: 0 80px;
+    margin-top: 80px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tampilan_jadwal .satu_jadwal{
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    
+}
+
+.tampilan_jadwal .satu_jadwal >h1{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.tampilan_jadwal .satu_jadwal >h2{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tampilan_jadwal .satu_jadwal >h3{
+    font-size: 20px;
+    font-weight: 400;
+}

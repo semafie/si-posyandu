@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class akunModel extends Model
 {
     use HasFactory;
+
+    
 }

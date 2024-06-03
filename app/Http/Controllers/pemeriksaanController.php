@@ -60,7 +60,26 @@ class pemeriksaanController extends Controller
         return redirect()->route('admin_laporanpemeriksaan')->with(Session::flash('berhasil_edit', true));
     }
 
+    public function edits(Request $request, $id){
+        $pemeriksaan = pemeriksaanModel::findorFAil($id);
+
+        $pemeriksaan->tinggi_badan = $request->input('tinggi_badan');
+        $pemeriksaan->berat_badan = $request->input('berat_badan');
+        $pemeriksaan->status_gizi = $request->input('status_gizi');
+        $pemeriksaan->keterangan = $request->input('keterangan');
+
+        $pemeriksaan->save();
+        return redirect()->route('admin_laporanpemeriksaan')->with(Session::flash('berhasil_edit', true));
+    }
+
     public function hapus(Request $request, $id){
+        $pemeriksaan = pemeriksaanModel::findorFAil($id);
+
+        $pemeriksaan->delete();
+        return redirect()->route('admin_laporanpemeriksaan')->with(Session::flash('berhasil_hapus', true));
+    }
+
+    public function hapuss(Request $request, $id){
         $pemeriksaan = pemeriksaanModel::findorFAil($id);
 
         $pemeriksaan->delete();

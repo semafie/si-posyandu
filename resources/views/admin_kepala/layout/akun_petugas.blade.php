@@ -1,4 +1,4 @@
-@extends('admin.template.template-header')
+@extends('admin_kepala.template.template-header')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card petugas">
@@ -27,7 +27,7 @@
                       <td>{{ $item->email }}</td>
                       <td class="button_intable">
                         <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editdata{{ $item->id }}">Edit</button>
-                        <form action="/admin/akun_petugas/hapus/{{ $item->id }}" method="POST">
+                        <form action="/admin_kepala/akun_petugas/hapus/{{ $item->id }}" method="POST">
                             @csrf
                             @method('delete')
                          <button type="submit" class="btn btn-danger">Hapus</button>
@@ -41,7 +41,7 @@
                             <h5 class="modal-title" id="modalToggleLabel">Edit Data</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
-                          <form action="/admin/akun_petugas/edit/{{ $item->id }}" method="POST">
+                          <form action="/admin_kepala/akun_petugas/edit/{{ $item->id }}" method="POST">
                               @csrf
                               @method('put')
                           <div class="modal-body akun_petugas">
@@ -102,7 +102,7 @@
           <label for="defaultInput" class="form-label">ID</label>
           <label for="nama"  class="form-label">Nama petugas</label>
       </div>
-      <form action="/admin/akun_petugas/tambah" method="POST">
+      <form action="/admin_kepala/akun_petugas/tambah" method="POST">
       @csrf
       
      <div class="dua_input">
