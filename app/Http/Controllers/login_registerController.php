@@ -48,7 +48,7 @@ class login_registerController extends Controller
 
     public function loginakun(Request $request) {
 
-        dd($request->all());
+        // dd($request->all());
         
         $request->validate([
             'email' => 'required',
