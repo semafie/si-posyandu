@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\akunController;
 use App\Http\Controllers\bayiController;
+use App\Http\Controllers\cetakController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\pemeriksaanController;
 use App\Http\Controllers\imunisasiController;
@@ -14,6 +15,8 @@ use App\Http\Controllers\login_registerController;
 Route::get('/', [HomeController::class,'show_home'])->name('home');
 
 
+Route::get('/cetakimunisasi',[cetakController::class,'cetakimunisasis']);
+Route::post('/cetakimunisasi',[cetakController::class,'cetakimunisasi'])->name('cetakimunisasi');
 Route::get('/login',[login_registerController::class,'show_login'])->name('login');
 Route::get('/logout',[login_registerController::class,'logout'])->name('logout');
 Route::post('/loginakun',[login_registerController::class,'loginakun'])->name('loginakun');
@@ -42,8 +45,7 @@ Route::get('/admin/pemeriksaan',[AdminController::class,'show_pemeriksaan'])->na
 Route::post('/admin/pemeriksaan/tambah',[pemeriksaanController::class,'tambah'])->name('tambah_pemeriksaan');
 
 
-Route::get('/admin/imunisasi',[AdminController::class,'show_imunisasi'])->name('admin_imunisasi');
-Route::post('/admin/imunisasi/tambah',[imunisasiController::class,'tambah'])->name('tambah_imunisasi');
+
 
 Route::get('/admin/data_bayi',[AdminController::class,'show_databayi'])->name('admin_databayi');
 Route::put('/admin/data_bayi/edit/{id}',[bayiController::class,'edit'])->name('admin_editbayi');
@@ -57,6 +59,9 @@ Route::get('/admin/laporan/imunisasi',[AdminController::class,'show_laporanimuni
 Route::put('/admin/imunisasi/edit/{id}',[imunisasiController::class,'edit'])->name('edit_imunisasi');
 Route::delete('/admin/imunisasi/hapus/{id}',[imunisasiController::class,'hapus'])->name('hapus_imunisasi');
 });
+
+Route::get('/admin/imunisasi',[AdminController::class,'show_imunisasi'])->name('admin_imunisasi');
+Route::post('/admin/imunisasi/tambah',[imunisasiController::class,'tambah'])->name('tambah_imunisasi');
 
 
 Route::group(['middleware' => 'admin_kepala'], function(){

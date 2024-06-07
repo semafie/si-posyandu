@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card laporan_pemeriksaan">
-        <a href="{{ route('admin_pemeriksaan') }}"><button type="submit" class="btn btn-primary">Tambah Data Pemeriksaan</button></a>
+        <a href="{{ route('admin_pemeriksaan') }}"><button type="submit" class="btn btn-primary">Tambah Data Pemeriksaan</button><button type="submit" class="btn btn-warning">Print</button></a>
         
         <div class="text-nowrap table-responsive pt-0">
             <table id="myTable" class="datatables-basic table border-top">
