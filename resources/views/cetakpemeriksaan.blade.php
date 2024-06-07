@@ -103,7 +103,7 @@
             
         </table>
         <div class="footer">
-            <div>TTD APOTEKER Menyetujui</div>
+            <div>TTD BIDAN Menyetujui</div>
             <div class="halo">Jember, __________________</div>
             <div>a. n. __________________</div>
         </div>

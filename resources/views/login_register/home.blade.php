@@ -17,7 +17,7 @@
     </nav>
     <div class="isi">
         <h1>Jadwal Posyandu</h1>
-        <p>{{ $bulan }} {{ $tahun }}</p>
+        <p>{{ $tahun }}</p>
     </div>
     <div class="jadwal_tengah">
         <div class="tampilan_jadwal">

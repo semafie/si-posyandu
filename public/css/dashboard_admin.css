@@ -446,3 +446,39 @@
     width: 50%;
 }
 
+.nama_navbar{
+    margin-top: 16px;
+    font-size: 20px;
+}
+
+.dashboard_kepala{
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.satubutton{
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+.satubutton i{
+    font-size: 60px;
+    color: #FF5A7C;
+}
+
+.satubutton h1{
+    font-size: 25px;
+    color: rgb(40, 40, 40);
+}
+
+.satubutton:hover{
+    box-shadow: 0 0 3px  rgba(0, 0, 0, 0.4);
+}
+

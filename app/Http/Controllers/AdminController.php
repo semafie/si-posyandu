@@ -8,6 +8,7 @@ use App\Models\jadwalModel;
 use App\Models\pemeriksaanModel;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -18,7 +19,8 @@ class AdminController extends Controller
 
     public function show_dashboard(){
         return view('admin.layout.dashboard',[
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -26,7 +28,7 @@ class AdminController extends Controller
         
         return view('admin.layout.pendaftaran',[
             'title' => 'Pendaftaran Bayi dan Balita',
-            
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -34,7 +36,8 @@ class AdminController extends Controller
         $bayi = bayiModel::all();
         return view('admin.layout.pemeriksaan',[
             'title' => 'pemeriksaan Bayi dan Balita',
-            'bayi' => $bayi
+            'bayi' => $bayi,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -42,7 +45,8 @@ class AdminController extends Controller
         $bayi = bayiModel::all();
         return view('admin.layout.imunisasi',[
             'title' => 'imunisasi Bayi dan Balita',
-            'bayi' => $bayi
+            'bayi' => $bayi,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -51,7 +55,8 @@ class AdminController extends Controller
         $bayi = bayiModel::all();
         return view('admin.layout.data_bayi',[
             'title' => 'imunisasi Bayi dan Balita',
-            'bayi' => $bayi
+            'bayi' => $bayi,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -61,7 +66,8 @@ class AdminController extends Controller
         return view('admin.layout.laporan_pemeriksaan',[
             'title' => 'Laporan pemeriksaan',
             'pemeriksaan' => $pemeriksaan,
-            'bayi' => $bayi
+            'bayi' => $bayi,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -71,7 +77,8 @@ class AdminController extends Controller
         return view('admin.layout.laporan_imunisasi',[
             'title' => 'Laporan imunisasi',
             'imunisasi' => $imunisasi,
-            'bayi' => $bayi
+            'bayi' => $bayi,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -79,7 +86,8 @@ class AdminController extends Controller
         $user = User::where('role', 'admin')->get();
         return view('admin.layout.akun_petugas',[
             'title' => 'Akun Petugas',
-            'user' => $user
+            'user' => $user,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 
@@ -87,7 +95,8 @@ class AdminController extends Controller
         $jadwal = jadwalModel::all();
         return view('admin.layout.jadwalposyandu',[
             'title' => 'Jadwal Posyandu',
-            'jadwal' => $jadwal
+            'jadwal' => $jadwal,
+            'getRecord' => User::find(Auth::user()->id),
         ]);
     }
 }
