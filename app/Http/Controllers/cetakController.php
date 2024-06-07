@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\imunisasiModel;
 use App\Models\pemeriksaanModel;
 use Illuminate\Http\Request;
 use PDF;
@@ -20,14 +21,14 @@ class cetakController extends Controller
         }
 
     public function cetakimunisasi(Request $request){
-        $pemerikasaan = pemeriksaanModel::where('tanggal', $request->tanggalprint);
+        $imunisasi = imunisasiModel::where('tanggal_imunisasi', $request->tanggalprint)->get();
         
 
             $widthInCm = 9;
         $widthInPoints = $widthInCm * 28.3465;
     
             $pdf = PDF::loadview('cetakimunisasi',[
-                'pemeriksaan' => $pemerikasaan,
+                'imunisasi' => $imunisasi,
                 'tanggal' => $request->tanggalprint
             ])
                     ->setPaper('A4', 'portrait');
