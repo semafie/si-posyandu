@@ -16,7 +16,8 @@ Route::get('/', [HomeController::class,'show_home'])->name('home');
 
 
 Route::get('/cetakimunisasi',[cetakController::class,'cetakimunisasis']);
-Route::post('/cetakimunisasi',[cetakController::class,'cetakimunisasi'])->name('cetakimunisasi');
+Route::post('/cetakimunisasi/masuk',[cetakController::class,'cetakimunisasi'])->name('cetakimunisasi');
+Route::post('/cetakpemeriksaan/masuk',[cetakController::class,'cetakpemeriksaan'])->name('cetakpemeriksaan');
 Route::get('/login',[login_registerController::class,'show_login'])->name('login');
 Route::get('/logout',[login_registerController::class,'logout'])->name('logout');
 Route::post('/loginakun',[login_registerController::class,'loginakun'])->name('loginakun');

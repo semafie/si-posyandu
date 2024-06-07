@@ -75,23 +75,32 @@
             <h2>Si<span>Posyandu</span></h2>
         </div>
         <div class="date">
-            <strong>Tanggal:</strong> __________________
+            <strong>Tanggal:</strong> {{ $tanggal }}
         </div>
         <table>
+            <thead>
             <tr>
                 <th>ID</th>
                 <th>Nama Bayi</th>
-                <th>Jenis Vitamin</th>
-                <th>Jenis Imunisasi</th>
+                <th>Tinggi bdan</th>
+                <th>berat badan</th>
+                <th>status</th>
                 <th>Keterangan</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
-                <td>1</td>
-                <td>ilmanisma</td>
-                <td>VITAMIN A</td>
-                <td>IMUNISASI B</td>
-                <td>SEHAT. LANCAR</td>
+               @foreach($pemeriksaan as $item)
+               <td>{{ $item->id }}</td>
+               <td>{{ $item->bayi->nama_bayi }}</td>
+               <td>{{ $item->tinggi_badan }}</td>
+               <td>{{ $item->berat_badan }}</td>
+               <td>{{ $item->status_gizi }}</td>
+               <td>{{ $item->keterangan }}</td>
+               @endforeach 
             </tr>
+        </tbody>
+            
         </table>
         <div class="footer">
             <div>TTD APOTEKER Menyetujui</div>

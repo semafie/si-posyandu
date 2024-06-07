@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card laporan_pemeriksaan">
-        <a href="{{ route('admin_pemeriksaan') }}"><button type="submit" class="btn btn-primary">Tambah Data Pemeriksaan</button><button type="submit" class="btn btn-warning">Print</button></a>
+        <div style="gap: 15px; display: flex;"><a href="{{ route('admin_pemeriksaan') }}"><button type="submit" class="btn btn-primary">Tambah Data Pemeriksaan</button></a><button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#print">Print</button></div>
         
         <div class="text-nowrap table-responsive pt-0">
             <table id="myTable" class="datatables-basic table border-top">
@@ -83,6 +83,25 @@
         </div>
 
         
+        <div class="modal fade" id="print" aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none;" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalToggleLabel">Pilih tanggal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form action="/cetakpemeriksaan/masuk" method="POST">
+              @csrf
+              <div class="modal-body">
+                <input class="form-control" name="tanggalprint" type="date"  id="html5-date-input" />
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Cetak Pemeriksaan</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
 
     </div>
 </div>
